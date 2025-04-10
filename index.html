@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="clock-container">
+        <div class="clock">
+            <div class="time-section">
+                <div class="time" id="hours">00</div>
+                <div class="label">Hour</div>
+            </div>
+            <div class="seperate">:</div>
+            <div class="time-section">
+                <div class="time" id="minutes">00</div>
+                <div class="label">Minute</div>
+            </div>
+            <div class="seperate">:</div>
+            <div class="time-section">
+                <div class="time" id="seconds">00</div>
+                <div class="label">Second</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+    </script>
+</body>
+
+</html>
+
+<!-- <script>
+        function updateClock() {
+            const now = new Date(); // Corrected: Use 'new Date()' to get the current date and time
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0'); // Corrected: Use 'getMinutes()'
+            const seconds = now.getSeconds().toString().padStart(2, '0'); // Corrected: Use 'getSeconds()'
+
+            document.getElementById('hours').textContent = hours; // Corrected: Use string 'hours'
+            document.getElementById('minutes').textContent = minutes; // Corrected: Use string 'minutes'
+            document.getElementById('seconds').textContent = seconds; // Corrected: Use string 'seconds'
+        }
+
+        updateClock(); // Initial call to display the clock immediately
+        setInterval(updateClock, 1000); // Update the clock every second
+    </script> -->
+</body>
+
+</html>
